@@ -1,7 +1,7 @@
-/* RICHARD KIM - Richard Lin, Sungbin Kim
+/* Team Mirksome -- Sarah Yoon, Richard Lin
    APCS1 pd10
-   HW33 -- Do you even add, bruh?
-   2015-11-18 */
+   HW37 -- Rational Equality
+   2015-11-24 */
 
 public class Rational {
    
