@@ -98,7 +98,22 @@ public class Rational {
 	else {
 	    return -1;
 	}
-    }   
+    }
+
+    public boolean equals(Object rat) {
+	//First check aliasing:
+	boolean retVal = this == rat;
+
+	//Next, if this and input are different objects:
+	if (!retVal) {
+	    //check if input object is Rational:
+	    retVal = rat instanceof Rational
+		// and if its state vars match those of this Rational:
+		&& this.numer==((Rational)rat).numer
+		&& this.denom==((Rational)rat).denom;
+	}
+	return retVal;
+    }
 
     public static void main(String[] args) {
 	Rational r = new Rational (2,3);
