@@ -106,6 +106,8 @@ public class Rational {
 
 	//Next, if this and input are different objects:
 	if (!retVal) {
+	    //reduce rat:
+	    ((Rational)rat).reduce();
 	    //check if input object is Rational:
 	    retVal = rat instanceof Rational
 		// and if its state vars match those of this Rational:
@@ -159,7 +161,13 @@ public class Rational {
 	System.out.println("r.compareTo(s): " + r.compareTo(s));
 	System.out.println("s.compareTo(r): " + s.compareTo(r));
 	System.out.println("t.compareTo(r): " + t.compareTo(r));
-	System.out.println("r.compareTo(r): " + r.compareTo(r));	
+	System.out.println("r.compareTo(r): " + r.compareTo(r));
+
+	System.out.println("Testing equals()");
+	System.out.println("r.equals(s): " + r.equals(s));
+	System.out.println("s.equals(s): " + s.equals(s));
+	System.out.println("t.equals(r): " + t.equals(r));
+	
     }
 
 
