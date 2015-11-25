@@ -110,7 +110,7 @@ public class Rational {
 	    //check if input object is Rational:
 	    retVal = rat instanceof Rational;
 
-	    if (!retVal) {
+	    if (retVal) {
 		
 		//reduce rat:
 		((Rational)rat).reduce();
@@ -121,6 +121,7 @@ public class Rational {
 		    && this.denom==((Rational)rat).denom;
 	    }
 	}
+	
 	return retVal;
     }
 
@@ -128,6 +129,8 @@ public class Rational {
 	Rational r = new Rational (2,3);
 	Rational s = new Rational (1,2);
 	Rational t = new Rational (4,0);
+	Rational u = new Rational (2,3);
+	String v = "fun";
 
 	System.out.println("Testing floatValue()");
 	System.out.println("s: " + s.floatValue());
@@ -137,6 +140,8 @@ public class Rational {
 	System.out.println("s:" + s);
 	System.out.println("r:" + r);
 	System.out.println("t:" + t);
+	System.out.println("u:" + u);
+	System.out.println("v:" + v);
 
 	System.out.println("Testing multiply()");
 	r.multiply(s);
@@ -174,6 +179,8 @@ public class Rational {
 	System.out.println("r.equals(s): " + r.equals(s));
 	System.out.println("s.equals(s): " + s.equals(s));
 	System.out.println("t.equals(r): " + t.equals(r));
+	System.out.println("r.equals(u): " + r.equals(u));
+	System.out.println("t.equals(v): " + t.equals(v));
 	
     }
 
