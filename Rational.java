@@ -106,13 +106,20 @@ public class Rational {
 
 	//Next, if this and input are different objects:
 	if (!retVal) {
-	    //reduce rat:
-	    ((Rational)rat).reduce();
+	    
 	    //check if input object is Rational:
-	    retVal = rat instanceof Rational
+	    retVal = rat instanceof Rational;
+
+	    if (!retVal) {
+		
+		//reduce rat:
+		((Rational)rat).reduce();
+		
 		// and if its state vars match those of this Rational:
-		&& this.numer==((Rational)rat).numer
-		&& this.denom==((Rational)rat).denom;
+
+		retVal = this.numer==((Rational)rat).numer
+		    && this.denom==((Rational)rat).denom;
+	    }
 	}
 	return retVal;
     }
