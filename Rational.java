@@ -112,7 +112,7 @@ public class Rational {
 
 	    if (retVal) {
 		
-		//reduce rat:
+		//reduces rat:
 		((Rational)rat).reduce();
 		
 		// and if its state vars match those of this Rational:
@@ -129,8 +129,9 @@ public class Rational {
 	Rational r = new Rational (2,3);
 	Rational s = new Rational (1,2);
 	Rational t = new Rational (4,0);
-	Rational u = new Rational (2,3);
-	String v = "fun";
+	Rational u = new Rational (4,6);
+	Rational v = new Rational (2,3);
+	String w = "fun";
 
 	System.out.println("Testing floatValue()");
 	System.out.println("s: " + s.floatValue());
@@ -142,6 +143,7 @@ public class Rational {
 	System.out.println("t:" + t);
 	System.out.println("u:" + u);
 	System.out.println("v:" + v);
+	System.out.println("w:" + w);
 
 	System.out.println("Testing multiply()");
 	r.multiply(s);
@@ -176,11 +178,12 @@ public class Rational {
 	System.out.println("r.compareTo(r): " + r.compareTo(r));
 
 	System.out.println("Testing equals()");
-	System.out.println("r.equals(s): " + r.equals(s));
-	System.out.println("s.equals(s): " + s.equals(s));
-	System.out.println("t.equals(r): " + t.equals(r));
-	System.out.println("r.equals(u): " + r.equals(u));
-	System.out.println("t.equals(v): " + t.equals(v));
+	System.out.println("r.equals(s): " + r.equals(s));//This tests for inequality
+	System.out.println("s.equals(s): " + s.equals(s));//This tests for reflexive equality (and aliasing)
+	System.out.println("t.equals(r): " + t.equals(r));//This tests for inequality
+	System.out.println("r.equals(u): " + r.equals(u));//This tests for the value equality (with reduction)
+	System.out.println("r.equals(v): " + r.equals(v));//This tests for the value equality (without reduction)
+	System.out.println("t.equals(w): " + t.equals(w)); //This tests for the different Object (in)-equality
 	
     }
 
