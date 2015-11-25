@@ -183,7 +183,7 @@ public class Rational {
 	System.out.println("t.equals(r): " + t.equals(r));//This tests for inequality
 	System.out.println("r.equals(u): " + r.equals(u));//This tests for the value equality (with reduction)
 	System.out.println("r.equals(v): " + r.equals(v));//This tests for the value equality (without reduction)
-	System.out.println("t.equals(w): " + t.equals(w)); //This tests for the different Object (in)-equality
+	System.out.println("t.equals(w): " + t.equals(w)); //This tests for the different Object inequality
 	
     }
 
