@@ -89,10 +89,16 @@ public class Rational {
 
     // Instead of using LCD to compare, this method simply utilizes floatValue() to compare float values of the rationals.
     public int compareTo(Rational factor) {
-	if(floatValue() == factor.floatValue()) {
+	//I didn't reduce the Rationals because that would alter them without the user explicitly wanting to alter them
+
+	//The following is just basic fraction comparison. Multiply by each other's denominators and then compare numerators.
+	int thisNumer = numer * factor.denom;
+	int thatNumer = factor.numer * denom;
+	
+	if(thisNumer == thatNumer ) {
 	    return 0;
 	}
-	else if(floatValue() > factor.floatValue()) {
+	else if(thisNumer > thatNumer) {
 	    return 1;
 	}
 	else {
@@ -108,22 +114,16 @@ public class Rational {
 	if (!retVal) {
 	    
 	    //check if input object is Rational:
-	    retVal = rat instanceof Rational;
+	    retVal = rat instanceof Rational
 
-	    if (retVal) {
-		
-		//reduces rat:
-		((Rational)rat).reduce();
-		
-		// and if its state vars match those of this Rational:
-
-		retVal = this.numer==((Rational)rat).numer
-		    && this.denom==((Rational)rat).denom;
-	    }
+		//And then use compareTo to check for instance variable equality
+		&& (this.compareTo((Rational)rat) == 0);
 	}
 	
 	return retVal;
+
     }
+
 
     public static void main(String[] args) {
 	Rational r = new Rational (2,3);
@@ -176,6 +176,7 @@ public class Rational {
 	System.out.println("s.compareTo(r): " + s.compareTo(r));
 	System.out.println("t.compareTo(r): " + t.compareTo(r));
 	System.out.println("r.compareTo(r): " + r.compareTo(r));
+	System.out.println("r.compareTo(v): " + r.compareTo(v));
 
 	System.out.println("Testing equals()");
 	System.out.println("r.equals(s): " + r.equals(s));//This tests for inequality
